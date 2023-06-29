@@ -5,17 +5,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class ArrayListTest {
-    @Test
-    public void arraylistCommonTest(){
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("a");
-        list.add("b");
 
-        System.out.println(list.remove(0));
-
-        System.out.println(list.remove(0));
-
-    }
 
     @Test
     public void arrayListCloneTest(){
@@ -31,6 +21,30 @@ public class ArrayListTest {
         System.out.println(l2);
         System.out.println(l3);
         System.out.println(l4);
+
+    }
+
+    @Test
+    public void arrayListRemoveTest(){
+        ArrayList<Integer> array = new ArrayList<>();
+        array.add(2);
+        array.add(2);
+        array.add(1);
+        array.add(1);
+        array.add(3);
+        array.add(3);
+        Integer in = 1;
+        for (int i = 0; i < array.size(); i++) {
+            Integer s = array.get(i);
+            if ( s.equals(in) )
+            {
+                array.remove(s);
+                i=i-1;
+            }
+        }
+
+        System.out.println(array);
+
 
     }
 
